@@ -1,5 +1,10 @@
 # PFN Witness — who convinced TabPFN?
 
+> **Why this matters (20s):** TabPFN predicts by voting over training rows —
+> Witness shows the votes. Removing top witnesses moves predictions 15–22×
+> more than random removal, and an audit score finds harmful rows (repair
+> +0.004 over random removal). Provenance you can act on, not post-hoc guess.
+
 TabPFN-3.5's decoder is an attention retrieval head: each prediction is a
 vote over training rows. Witness exposes the votes (via
 `tabpfn-extensions`' decoder readout, Aug 2026) and turns them into:

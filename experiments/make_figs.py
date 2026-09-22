@@ -12,11 +12,8 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-sys.path.insert(0, "/home/dead/pfn-witness/src")
-sys.path.insert(0, "/home/dead/pfn-jepa/experiments")
-sys.path.insert(0, "/home/dead/playground-series-s6e9")
 from witness.core import fit_and_readout, jury
-from run_matrix import openml_binary
+from witness.data import openml_binary
 
 X, y = openml_binary("phoneme")
 Xpool, Xval, ypool, yval = train_test_split(X, y, test_size=2000, stratify=y,

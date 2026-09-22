@@ -1,3 +1,21 @@
+Metadata-Version: 2.4
+Name: pfn-witness
+Version: 0.1.0
+Summary: PFN Witness: decoder provenance, audit and repair for TabPFN-3.5
+License: Apache-2.0
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tabpfn==9.0.0
+Requires-Dist: tabpfn-extensions==0.6.2
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: torch
+Requires-Dist: flask
+Requires-Dist: matplotlib
+Dynamic: license-file
+
 # PFN Witness — who convinced TabPFN?
 
 TabPFN-3.5's decoder is an attention retrieval head: each prediction is a
@@ -32,7 +50,6 @@ a label-audit and repair loop.
 ## Reproduce
 
 ```bash
-pip install -e .   # Python 3.10+, torch, tabpfn==9.0.0, tabpfn-extensions==0.6.2
-<venv-python> experiments/run.py   # figs/witness.csv (phoneme via OpenML auto-download)
+<venv-python> experiments/run.py   # figs/witness.csv
 <venv-python> demo/app.py          # jury view (port 5003)
 ```

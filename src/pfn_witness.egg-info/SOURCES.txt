@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/pfn_witness.egg-info/PKG-INFO
+src/pfn_witness.egg-info/SOURCES.txt
+src/pfn_witness.egg-info/dependency_links.txt
+src/pfn_witness.egg-info/requires.txt
+src/pfn_witness.egg-info/top_level.txt
+src/witness/core.py
+src/witness/data.py
+tests/test_witness.py

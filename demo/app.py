@@ -10,12 +10,8 @@ import pandas as pd
 from flask import Flask, request, render_template_string
 from sklearn.model_selection import train_test_split
 
-sys.path.insert(0, "/home/dead/pfn-witness/src")
-sys.path.insert(0, "/home/dead/pfn-jepa/experiments")
-sys.path.insert(0, "/home/dead/playground-series-s6e9")
 from witness.core import audit, fit_and_readout, jury
-from run_matrix import openml_binary
-from src.ev import tabpfn_predict_proba
+from witness.data import openml_binary, tabpfn_predict_proba
 
 print("loading + fitting witness model...", flush=True)
 X, y = openml_binary("phoneme")
@@ -47,7 +43,7 @@ PAGE = """
 @app.get("/")
 def index():
     i = int(request.args.get("i", 0)) % len(Xv)
-    j = jury(W[i], TIX, yc, top=3)
+    j = jury(W[i], TIX, yc, p_pred=float(P[i]), top=3)
     top10 = [(int(r.row), float(r.attention), float(r.harmful))
              for r in AUD.itertuples(index=False)]
     return render_template_string(PAGE, i=i, p=float(P[i]), t=int(yv[i]),

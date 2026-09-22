@@ -21,11 +21,20 @@ def fit_and_readout(Xtr, ytr, Xte, seed=0):
     return clf, np.asarray(W), np.asarray(idx)
 
 
-def jury(W_row, idx, ytr, top=3):
+def jury(W_row, idx, ytr, p_pred=None, top=3):
+    """Supporting = highest-attention rows labeled as the predicted class;
+    opposing = highest-attention rows labeled otherwise. Needs p_pred
+    (predicted P(class1)) to know which class is 'supported'."""
     order = np.argsort(-W_row)
-    sup = [(int(idx[i]), float(W_row[i]), int(ytr[idx[i]])) for i in order[:top]]
-    opp = [(int(idx[i]), float(W_row[i]), int(ytr[idx[i]])) for i in order[::-1][:top]]
-    return {"supporting": sup, "opposing": opp}
+    labs = ytr[idx[order]]
+    if p_pred is None:
+        p_pred = float(labs[:top].mean())  # fallback, not for display
+    pred = int(p_pred > 0.5)
+    sup_i = [i for i in order if ytr[idx[i]] == pred][:top]
+    opp_i = [i for i in order if ytr[idx[i]] != pred][:top]
+    sup = [(int(idx[i]), float(W_row[i]), int(ytr[idx[i]])) for i in sup_i]
+    opp = [(int(idx[i]), float(W_row[i]), int(ytr[idx[i]])) for i in opp_i]
+    return {"supporting": sup, "opposing": opp, "pred": pred}
 
 
 def audit(W, idx, ytr, yva_pred, yva_true):

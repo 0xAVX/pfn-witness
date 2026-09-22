@@ -12,12 +12,8 @@ import pandas as pd
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import train_test_split
 
-sys.path.insert(0, "/home/dead/pfn-witness/src")
-sys.path.insert(0, "/home/dead/pfn-jepa/experiments")
-sys.path.insert(0, "/home/dead/playground-series-s6e9")
 from witness.core import audit, fit_and_readout, removal_effect
-from run_matrix import openml_binary
-from src.ev import tabpfn_predict_proba
+from witness.data import openml_binary, tabpfn_predict_proba
 
 SEED = 0
 

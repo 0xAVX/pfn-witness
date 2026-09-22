@@ -15,10 +15,10 @@ vote over training rows. Witness exposes the votes (via
   random removal (measured, not assumed).
 ## Evidence (`figs/witness.csv`, phoneme)
 
-- **Faithfulness**: removing top-1 witness moves P by 0.107 vs 0.007 random
-  (15×); top-5: 0.153 vs 0.007 (22×). Decoder votes are mechanistically
-  prediction-relevant: removing high-weight witnesses moves predictions far
-  more than removing random rows.
+- **Faithfulness**: 30 probes — top-1 removal Δp 0.077, 95% CI
+  [0.035, 0.127] vs random 0.004 [0.002, 0.008]; top-5: 0.148 [0.091, 0.217]
+  vs 0.004 [0.001, 0.008] (`figs/faithful_ci.csv`). Non-overlapping
+  intervals: decoder votes are mechanistically prediction-relevant.
 
 ![jury](figs/jury.png)
 

@@ -1,8 +1,0 @@
-tabpfn==9.0.0
-tabpfn-extensions==0.6.2
-pandas
-numpy
-scikit-learn
-torch
-flask
-matplotlib

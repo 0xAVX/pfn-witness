@@ -50,6 +50,7 @@ a label-audit and repair loop.
 ## Reproduce
 
 ```bash
-<venv-python> experiments/run.py   # figs/witness.csv
+pip install -e .   # Python 3.10+, torch, tabpfn==9.0.0, tabpfn-extensions==0.6.2
+<venv-python> experiments/run.py   # figs/witness.csv (phoneme via OpenML auto-download)
 <venv-python> demo/app.py          # jury view (port 5003)
 ```

@@ -1,8 +1,9 @@
 # PFN Witness — who convinced TabPFN?
 
 > **Why this matters (20s):** TabPFN predicts by voting over training rows —
-> Witness shows the votes. Removing top witnesses moves predictions 15–22×
-> more than random removal, and an audit score finds harmful rows (repair
+> Witness shows the votes. Removing top witnesses moves predictions
+> dramatically more than random removal, with non-overlapping bootstrap
+> intervals. An audit score finds harmful rows (repair
 > +0.004 over random removal). Provenance you can act on, not post-hoc guess.
 
 ![faithfulness](figs/faithful.gif)
@@ -44,5 +45,6 @@ Fresh-env verified 2026-09-22 (clean venv, `pip install -e .`, witness suite 2 p
 pip install -e .   # Python 3.10+, torch, tabpfn==9.0.0, tabpfn-extensions==0.6.2
 <venv-python> experiments/run.py   # figs/witness.csv (phoneme via OpenML auto-download)
 <venv-python> experiments/faithful_ci.py   # 30-probe faithfulness + bootstrap CI
+<venv-python> experiments/repair_control.py   # figs/repair_ctrl.csv (repair vs random removal)
 <venv-python> demo/app.py          # jury view (port 5003)
 ```

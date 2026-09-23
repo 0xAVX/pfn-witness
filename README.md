@@ -41,5 +41,6 @@ Fresh-env verified 2026-09-22 (clean venv, `pip install -e .`, witness suite 2 p
 ```bash
 pip install -e .   # Python 3.10+, torch, tabpfn==9.0.0, tabpfn-extensions==0.6.2
 <venv-python> experiments/run.py   # figs/witness.csv (phoneme via OpenML auto-download)
+<venv-python> experiments/faithful_ci.py   # 30-probe faithfulness + bootstrap CI
 <venv-python> demo/app.py          # jury view (port 5003)
 ```

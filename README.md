@@ -8,6 +8,13 @@
 
 ![faithfulness](figs/faithful.gif)
 
+## Demo
+
+Live jury view — supporting/opposing training rows plus the audit's top-10
+harmful rows for one phoneme prediction:
+
+![jury view](media/jury_view.png)
+
 TabPFN-3.5's decoder is an attention retrieval head: each prediction is a
 vote over training rows. Witness exposes the votes (via
 `tabpfn-extensions`' decoder readout, Aug 2026) and turns them into:
